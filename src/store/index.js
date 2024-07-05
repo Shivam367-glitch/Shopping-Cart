@@ -4,6 +4,13 @@ const store=configureStore({
     reducer:{
         cart:cartReducer
     }
-}) 
+})  
+
+const unScribe=store.subscribe(()=>{
+    console.log(store.getState()); 
+});
+
+
+unScribe();
 
 export default store;

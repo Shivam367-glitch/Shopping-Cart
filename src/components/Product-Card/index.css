@@ -1,0 +1,38 @@
+.img-container {
+    position: relative;
+    overflow: hidden; 
+    padding: 20px;
+    border-radius: 16px;
+    width: 99%; 
+    text-decoration: none;
+    cursor: pointer;
+    height: fit-content; 
+}
+.img-container>img{
+    z-index: 1; 
+    position: relative;
+    background: transparent;
+}
+
+.img-container::before {
+    content: '';
+    position: absolute;
+    top: 60%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f0f0f0;
+    transition: top 0.5s ease-in-out;
+    opacity: 0.1;
+} 
+
+
+.card:hover .img-container::before {
+    top: 0;
+    opacity: 1;
+} 
+
+.card-title{
+font-weight: 500; 
+font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}

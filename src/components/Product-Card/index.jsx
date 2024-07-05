@@ -1,5 +1,5 @@
 import { useDispatch,useSelector} from "react-redux";
-
+import "./index.css"
 
 const ProductCard = (product) => { 
 
@@ -23,13 +23,16 @@ const ProductCard = (product) => {
         className="card border-2 rounded shadow py-2 px-1 d-flex flex-column justify-content-center  gap-3"
         style={{minHeight:"16rem",width:'22rem'}}
         key={product.id}
-      > 
+      >  
+      <div className="img-container">
+
         <img
           src={product.image}
-          className="card-img-top rounded-0"
+          className="card-img-top rounded-0 productCard-img"
           style={{height:'300px',maxWidth:'100%',objectFit:'contain'}}
           alt={product.title}
         />
+      </div>
         <div className="card-body m-0 p-0  ">
           <div className="row">
             <div className="col-12">

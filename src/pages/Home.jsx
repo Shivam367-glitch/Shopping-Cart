@@ -2,7 +2,6 @@ import  { useEffect, useState } from 'react';
 
 import Loader from '../components/Loader';
 import ProductCard from '../components/Product-Card';
-// import { useDispatch,useSelector } from 'react-redux';
 const Home = () => {  
  
   const [products, setProducts] = useState([]); 
@@ -13,7 +12,6 @@ const fetchData = async () => {
       setLoading(true); 
       const response = await fetch('https://fakestoreapi.com/products/'); 
       const products = await response.json(); 
-      console.log(products);
       setProducts(products);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -24,15 +22,15 @@ const fetchData = async () => {
 
 
 
-  useEffect(() => {
+useEffect(() => {
     fetchData();
-  }, []);
+}, []);
 
   return (
      <> 
      {
       loading?<Loader/>:(
-        <div className='container-fluid'>
+        <div className='container-fluid mb-3'>
           <div className='row d-flex flex-row justify-coontent-center m-0 p-0'>
             {
               products.map((product,index)=>{
