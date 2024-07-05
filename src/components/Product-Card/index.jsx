@@ -6,7 +6,8 @@ const ProductCard = (product) => {
   const state=useSelector(state=>state.cart); 
   const dispatch=useDispatch();  
 
-    const handleCart=(e)=>{  
+    const handleCart=(e)=>{ 
+
       const removeItem = state.find((item) => item.id === e.id);
       if(!removeItem){ 
         dispatch({ type: 'cart/addToCart',payload:e });
@@ -46,9 +47,8 @@ const ProductCard = (product) => {
           </div>
           <div className="col-8">
             <a
-              href="#"
+             
               className="btn btn-dark w-100 p-3 rounded-0 text-warning"
-              data-product={JSON.stringify(product)}
               onClick={()=>{handleCart(product)}}
             >
              {

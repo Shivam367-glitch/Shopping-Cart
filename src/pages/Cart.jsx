@@ -16,11 +16,11 @@ const Cart = () => {
     <>
       <div className="container-fluid">
         {
-          <div className="row">
-            <div className="col text-center">
-              <h1 className="text-success">Total : {total}</h1>
-            </div>
+          state.length>0?<div className="row">
+          <div className="col text-center">
+            <h1 className="text-success">Total : ${total}</h1>
           </div>
+        </div>:null
         }
         <div className="row d-flex flex-row justify-content-center m-0 p-0">
           {state.length > 0 ? (
