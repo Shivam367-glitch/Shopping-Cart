@@ -1,7 +1,7 @@
 import  { useEffect, useState } from 'react';
-
 import Loader from '../components/Loader';
 import ProductCard from '../components/Product-Card';
+
 const Home = () => {  
  
   const [products, setProducts] = useState([]); 

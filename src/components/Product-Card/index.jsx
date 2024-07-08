@@ -8,7 +8,7 @@ const ProductCard = (product) => {
 
     const handleCart=(e)=>{ 
 
-      const removeItem = state.find((item) => item.id === e.id);
+      const removeItem = state.items.find((item) => item.id === e.id);
       if(!removeItem){ 
         dispatch({ type: 'cart/addToCart',payload:e });
       }else{ 
@@ -52,7 +52,7 @@ const ProductCard = (product) => {
               onClick={()=>{handleCart(product)}}
             >
              {
-              state.find((cartProduct)=>{
+              state.items.find((cartProduct)=>{
                 return cartProduct.id===product.id;
               })?"Remove From Cart":"Add To Cart"
              }

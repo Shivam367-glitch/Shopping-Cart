@@ -1,0 +1,40 @@
+.cardItem{
+    position: relative; 
+    border: 1px solid   rgb(218, 214, 214); 
+    min-height: 180px;
+}
+
+
+.item-delete{ 
+    cursor: pointer;
+    position: absolute;
+    right:  -8px; 
+    top: -12px;  
+    border: 1px solid black; 
+    border-radius: 50%;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    text-align: center;
+    height: 20px; 
+    background: transparent;  
+    color: black;
+    transition: background 0.3s; 
+    transition-timing-function: ease-in-out; 
+    font-weight: 500;
+} 
+
+
+.item-delete:hover{
+    background: black;
+    color: red;
+} 
+  
+.checkout-btn{
+    height:30px;
+    background-color: black;
+    color: white; 
+    width: 100px;
+    
+}
