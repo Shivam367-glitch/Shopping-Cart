@@ -1,18 +1,20 @@
 import { useDispatch,useSelector} from "react-redux";
-import "./index.css"
-
+import "./index.css";
+// import {deleteFromCart,addToCart} from "../../store/slices/cartSlice"
 const ProductCard = (product) => { 
 
   const state=useSelector(state=>state.cart); 
   const dispatch=useDispatch();  
 
     const handleCart=(e)=>{ 
-
+     console.log("handleCart");
       const removeItem = state.items.find((item) => item.id === e.id);
       if(!removeItem){ 
-        dispatch({ type: 'cart/addToCart',payload:e });
+        dispatch({ type: 'cart/addToCart',payload:e }); 
+        console.log("handleCart if");
       }else{ 
-        dispatch({type:'cart/deleteFromCart',payload:e});
+        dispatch({type:'cart/deleteFromCart',payload:e.id}); 
+        console.log("handleCart else");
       }
     }
 
