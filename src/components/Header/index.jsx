@@ -1,7 +1,11 @@
 // import React from "react";
-import { NavLink  } from "react-router-dom";
+import { NavLink  } from "react-router-dom"; 
+import { useSelector } from "react-redux"; 
+import  "./index.css";
 
-const Header = () => {
+const Header = () => { 
+  const state=useSelector(state=>state.cart); 
+
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -28,8 +32,8 @@ const Header = () => {
                 </NavLink >
               </li>
               <li className="nav-item">
-                <NavLink  to="/cart" className="nav-link" aria-current="page">
-                  Cart
+                <NavLink  to="/cart" className="nav-link position-relative" aria-current="page">
+                  <span>Cart</span><span className="item-count">{state.items.length}</span>
                 </NavLink >
               </li>
             </ul>
