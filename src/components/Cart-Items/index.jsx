@@ -5,7 +5,7 @@ const CartItems = ({product,handleIncrement,deleteFromCart,handleDecrement}) => 
   
   return (
     <>
-       <div className="col-12 col-md-6 col-lg-12 shadow mt-4 d-flex flex-column flex-md-row   justify-content-between align-items-center cardItem flex-wrap"> 
+       <div className="col-12 col-md-8 col-lg-12 shadow mt-4 d-flex flex-column flex-md-row   justify-content-between align-items-center cardItem flex-wrap"> 
         <img src={product?.image} alt={product?.title}  className="col-12 col-lg-2 mt-5 mt-md-0"/>  
         <div className="col-12 col-lg-5 ps-lg-5 text-start mt-5 mt-lg-0">
             <p>{product?.title}</p> 

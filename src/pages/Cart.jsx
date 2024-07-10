@@ -21,12 +21,12 @@ const handleDelete=(itemId)=>{
   return (
     <>
       <div className="container-fluid  mt-5 mb-3">
-       <div className="row d-flex flex-column flex-md-row justify-content-between align-items-sm-center align-items-md-baseline w-100">
+       <div className="row d-flex flex-column flex-md-row justify-content-between justify-content-md-center justify-content-lg-between align-items-sm-center align-items-md-baseline w-100">
        <div className="col-12 col-sm-8 col-md-8 col-lg-8   text-center">
        {
           state.items.length>0 ?state.items.map((item,index)=>{
              return (
-              <div className="row ms-1 mb-3" key={index}>
+              <div className="row ms-1 mb-3 d-flex flex-row justify-content-center" key={index}>
               <CartItems product={item} handleIncrement={handleIncrement} deleteFromCart={handleDelete} handleDecrement={handleDecrement}/>
               </div>
              )
