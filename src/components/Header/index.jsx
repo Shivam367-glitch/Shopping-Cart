@@ -1,4 +1,4 @@
-// import React from "react";
+
 import { NavLink  } from "react-router-dom"; 
 import { useSelector } from "react-redux"; 
 import  "./index.css";
@@ -27,13 +27,13 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink  to="/" className="nav-link" aria-current="page">
+                <NavLink  to="/" className="nav-link d-inline-block" aria-current="page">
                   Home
-                </NavLink >
+                </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink  to="/cart" className="nav-link position-relative" aria-current="page">
-                  <span>Cart</span><span className="item-count">{state.items.length}</span>
+                <NavLink  to="/cart" className="nav-link position-relative d-inline-block" aria-current="page">
+                  <span>Cart</span><span className="badge rounded-pill bg-secondary item-count p-1">{state.items.length}</span>
                 </NavLink >
               </li>
             </ul>

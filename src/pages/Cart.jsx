@@ -34,7 +34,7 @@ const handleDelete=(itemId)=>{
              )
           })
           :
-          <div className="col-12 d-flex flex-column gap-3 text-center   ">
+          <div className="col-12 d-flex flex-column gap-3 text-center">
             <h1>Your Shopping Cart is empty</h1>
             <p>Looks like you haven’t added any items to the cart yet.</p>
             <Link className="d-block mx-auto rounded border border-transparent  bg-dark px-5 py-3 text-center text-decoration-none text-white" to="/">Explore products</Link>

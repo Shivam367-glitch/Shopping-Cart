@@ -1,7 +1,8 @@
 import { useDispatch,useSelector} from "react-redux";
 import "./index.css";
-// import {deleteFromCart,addToCart} from "../../store/slices/cartSlice"
-const ProductCard = (product) => { 
+const ProductCard = (product) => {  
+
+  const {id,title,image,price,category}=product;
 
   const state=useSelector(state=>state.cart); 
   const dispatch=useDispatch();  
@@ -25,27 +26,29 @@ const ProductCard = (product) => {
       <div
         className="card border-2 rounded shadow py-2 px-1 d-flex flex-column justify-content-center  gap-3"
         style={{minHeight:"16rem",width:'22rem'}}
-        key={product.id}
+        key={id}
       >  
       <div className="img-container">
 
         <img
-          src={product.image}
-          className="card-img-top rounded-0 productCard-img"
-          style={{height:'300px',maxWidth:'100%',objectFit:'contain'}}
-          alt={product.title}
+          src={image}
+          className="card-img-top rounded-0"
+          alt={title}
         />
       </div>
-        <div className="card-body m-0 p-0  ">
-          <div className="row">
+        <div className="card-body m-0 p-0">
+          <div className="row d-flex flex-column gap-3">
             <div className="col-12">
-              <p className="card-title">{product.title}</p>
+              <p className="card-title">{title}</p>
+            </div>
+            <div className="col-12">
+              <p className=""><span className="text-muted fw-bold">Category</span> <span className="badge bg-secondary">{category.charAt(0).toUpperCase() +category.slice(1)}</span></p>
             </div>
           </div>
         </div>
         <div className="row align-items-center text-center g-0 ">
           <div className="col-4">
-            <h5>${Math.round(product.price)}</h5>
+            <h5>${Math.round(price)}</h5>
           </div>
           <div className="col-8">
             <a
@@ -55,7 +58,7 @@ const ProductCard = (product) => {
             >
              {
               state.items.find((cartProduct)=>{
-                return cartProduct.id===product.id;
+                return cartProduct.id===id;
               })?"Remove From Cart":"Add To Cart"
              }
             </a>
