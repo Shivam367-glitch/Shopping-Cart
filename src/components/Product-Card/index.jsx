@@ -36,7 +36,7 @@ const ProductCard = (product) => {
           alt={title}
         />
       </div>
-        <div className="card-body m-0 p-0">
+        <div className="card-body m-2 p-0">
           <div className="row d-flex flex-column gap-3">
             <div className="col-12">
               <p className="card-title">{title}</p>
